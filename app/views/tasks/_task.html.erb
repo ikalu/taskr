@@ -1,0 +1,6 @@
+  <nav>
+    <%= task.body %>
+  </nav>
+  <%= button_to "Edit", edit_task_path(task), method: :get %>
+
+  <%= button_to "Done", task, method: :delete, data: {confirm: "Are you sure?" } %>

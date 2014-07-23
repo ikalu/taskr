@@ -1,0 +1,31 @@
+<p>Welcome <%=current_user.username%>, here are your TODOs</p>
+
+<div>
+  <%= form_for (@task) do |form| %>
+    <%= form.text_field :body %>
+    <%= button_to "Create new task", new_task_path(@task) %>
+  <%end%>
+</div>
+
+<div id="tasks">
+  <%= render current_user.tasks %>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $("#new_task").submit(function() {
+      $.post(
+        "/tasks",
+        { task: // task[body] = "foo"
+          { body: $("#task_body").val() }
+        },
+        function(data) {
+          $("#tasks").prepend(data);
+          $("#task_body").val("");
+        }
+      );
+      return false;
+    });
+  });
+</script>
+
