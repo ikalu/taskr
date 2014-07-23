@@ -22,7 +22,7 @@ class TasksController < ApplicationController
     task = Task.find(params[:id])
     task.destroy
 
-    redirect_to dashboard_path
+    render inline: "Success!"
   end
 
   private

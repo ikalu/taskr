@@ -13,19 +13,39 @@
 
 <script type="text/javascript">
   $(function() {
-    $("#new_task").submit(function() {
-      $.post(
-        "/tasks",
-        { task: // task[body] = "foo"
-          { body: $("#task_body").val() }
-        },
-        function(data) {
-          $("#tasks").prepend(data);
-          $("#task_body").val("");
-        }
-      );
-      return false;
-    });
+    $("#new_task").submit(handleCreateTask);
+    $("a.delete-task").click(handleDeleteTask);
   });
+
+  function handleCreateTask() {
+    $.post(
+      "/tasks",
+      { task: // task[body] = "foo"
+        { body: $("#task_body").val() }
+      },
+      function(data) {
+        $("#tasks").prepend(data);
+        $("#task_body").val("");
+        $("a.delete-task").click(handleDeleteTask);
+      }
+    );
+    return false;
+  }
+  function handleDeleteTask() {
+    var task_id = $(this).data("task");
+    $.ajax(
+      "/tasks" + task_id,
+      {
+        type: "DELETE",
+        dataType: "json",
+        success: function(data) {
+          $("#task_" + task_id).fadeOut("slow",function() {
+            this.remove()
+          });
+        }
+      }
+    );
+    return false;
+  }
 </script>
 
