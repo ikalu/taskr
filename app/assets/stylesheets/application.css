@@ -15,7 +15,8 @@
  */
 
 body {
-  background-color: #fafafa;
+  background: #fafafa url('http://www.thesparrowsneststl.org/wp-content/uploads/2014/02/to-do-pic1.jpg') no-repeat fixed center;
+  position: relative;
 }
 
 #header-container {
@@ -49,7 +50,7 @@ div#users {
 }
 
 .userforms {
- padding-top: 20px;
+ padding-top: 7px;
  padding-left: 35px;
 }
 
@@ -62,6 +63,10 @@ div#users {
   border-radius: 15px;
 }
 
+.msg h1, .msg h4 {
+  -color: white;
+}
+
 .msg h1 {
   font-size: 50px;
   letter-spacing: .25em;
@@ -70,3 +75,4 @@ div#users {
 .msg h4 {
   font-size: 30px;
   letter-spacing: 0.15em;
+}
