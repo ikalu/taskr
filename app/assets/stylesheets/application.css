@@ -14,9 +14,18 @@
  *= require_self
  */
 
-body {
-  background: #fafafa url('http://www.thesparrowsneststl.org/wp-content/uploads/2014/02/to-do-pic1.jpg') no-repeat fixed center;
+#homes-show {
+  background: #fafafa url('http://www.thesparrowsneststl.org/wp-content/uploads/2014/02/to-do-pic1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   position: relative;
+  margin: 0;
+}
+
+#dashboards-show {
+  margin: 0;
 }
 
 #header-container {
@@ -24,8 +33,7 @@ body {
   height: 40px;
   margin: 0 auto;
   text-align: right;
-  background-color: #00bfff;
-  border-radius: 5px;
+  background-color: rgba(225, 225, 223, 0.8);
 }
 
 .header-content {
@@ -43,7 +51,7 @@ body {
 div#users {
   width: 20%;
   height: 400px;
-  background-color: #00bfff;
+  background-color: rgba(225, 225, 223, 0.8);
   border-radius: 15px;
   margin-left: 900px; 
   margin-top: 100px;
